@@ -1,0 +1,12 @@
+{
+  "project_desc": "Project Alpha",
+  "project_slug": "project-alpha",
+  "author_name": "Dane Summers",
+  "author_email": "dsummersl@gmail.com",
+  "license": [
+    "Apache-2.0",
+    "MIT",
+    "Proprietary"
+  ],
+  "node_version": "22"
+}

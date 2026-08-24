@@ -1,0 +1,30 @@
+{
+  "name": "{{ cookiecutter.project_slug }}",
+  "version": "0.1.0",
+  "description": "{{ cookiecutter.project_desc }}",
+  "author": "{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>",
+  "license": "{{ 'UNLICENSED' if cookiecutter.license == 'Proprietary' else cookiecutter.license }}",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">={{ cookiecutter.node_version }}"
+  },
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "type": "tsc --noEmit",
+    "knip": "knip",
+    "treepeat": "uv tool run treepeat detect . --ignore \"**/node_modules/**,coverage/,dist/,.git,\"",
+    "adr": "echo 'Record an ADR:  npm exec adr new \"<subject>\"  (files land in docs/adr/)'",
+    "ci": "npm run coverage && npm run type && npm run knip && npm run treepeat"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^4.0.0",
+    "knip": "^5.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^4.0.0"
+  }
+}
