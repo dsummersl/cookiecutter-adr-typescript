@@ -14,12 +14,15 @@
     "test": "vitest run",
     "coverage": "vitest run --coverage",
     "type": "tsc --noEmit",
+    "lint": "ast-grep scan src test",
     "knip": "knip",
     "treepeat": "uv tool run treepeat detect . --ignore \"**/node_modules/**,coverage/,dist/,.git,\"",
     "adr": "echo 'Record an ADR:  npm exec adr new \"<subject>\"  (files land in docs/adr/)'",
-    "ci": "npm run coverage && npm run type && npm run knip && npm run treepeat"
+    "fix": "ast-grep scan --update-all src test",
+    "ci": "npm run coverage && npm run type && npm run lint && npm run knip"
   },
   "devDependencies": {
+    "@ast-grep/cli": ">=0.39.0",
     "@types/node": "^22.0.0",
     "@vitest/coverage-v8": "^4.0.0",
     "knip": "^5.0.0",

@@ -1,0 +1,14 @@
+id: no-comments-typescript
+language: typescript
+severity: error
+message: Comment not allowed. Prefer clear naming/types/tests; use "// WHY:" for a non-obvious rationale a reviewer would otherwise ask about.
+note: |
+  Allowlisted: shebangs, @ts-expect-error, @ts-ignore, eslint-disable,
+  tslint:disable, istanbul ignore, prettier-ignore, WHY:, SPDX headers.
+  JSDoc blocks (`/** ... */`) are banned too -- put the contract in the
+  types/tests, not a comment.
+rule:
+  kind: comment
+  not:
+    regex: '^#!|@ts-expect-error|@ts-ignore|eslint-disable|tslint:disable|istanbul ignore|prettier-ignore|WHY:|SPDX-License-Identifier'
+fix: ''
